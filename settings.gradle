@@ -1,0 +1,12 @@
+rootProject.name = 'cloud'
+
+// add sub projects
+include 'cloud-provider-payment8001'
+include 'cloud-provider-payment8002' // eureka project
+include 'cloud-dispatch-order7001'
+include 'cloud-dispatch-order7002'
+include 'cloud-customer-order80'
+include 'cloud-gateway-gateway9001'
+include 'cloud-config-server3001'
+include 'cloud-common-api'
+// include 'cloud-eureka-server7001'

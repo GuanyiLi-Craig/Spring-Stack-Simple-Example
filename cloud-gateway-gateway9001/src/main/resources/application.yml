@@ -1,0 +1,25 @@
+server:
+    port: 9001
+
+spring:
+  application:
+    name: cloud-gateway-gateway
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: payment_get_id_route    
+          uri: lb://cloud-payment-service
+          predicates:
+            - Path=/payment/get/** 
+        - id: payment_get_zk_route
+          uri: lb://cloud-payment-service
+          predicates:
+            - Path=/payment/zk/**
